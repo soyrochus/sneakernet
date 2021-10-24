@@ -12,6 +12,7 @@ from distutils.dir_util import copy_tree
 
 copy_from_pc_image = os.path.join(os.path.dirname(__file__), "pc2usb.png")
 copy_to_pc_image = os.path.join(os.path.dirname(__file__), "usb2pc.png")
+icon_image = os.path.join(os.path.dirname(__file__), "icon.png")
 
 if len(sys.argv) == 3:
     pc_dir = sys.argv[1]
@@ -23,6 +24,7 @@ else:
 class Sneakernet(Gtk.Window):
     def __init__(self):
         super().__init__(title="Copy data from and to PC")
+        self.set_icon_from_file(icon_image)
 
         #self.set_default_size(150, 100)
         self.set_border_width(10)
