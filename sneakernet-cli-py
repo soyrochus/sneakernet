@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# Simple utility to copy directory trees, typically between PC and USB
+# Copyright (c) 2021, Iwan van der Kleijn (iwanvanderkleijn@gmail.com)
+# This is Free Software (BSD). See the file LICENSE.txt
+
+import sys, os, os.path
+from distutils.dir_util import copy_tree
+
+if len(sys.argv) == 3:
+    pc_dir = sys.argv[1]
+    remote_dir = sys.argv[2]
+    copy_tree(origin, destination)
+else:
+    print("Usage: sneakernet.py «pc» «remote/device»")
+    sys.exit(0)
