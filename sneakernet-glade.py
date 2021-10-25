@@ -9,6 +9,9 @@ from gi.repository import Gtk
 import sys, os, os.path
 from distutils.dir_util import copy_tree
 
+icon_image = os.path.join(os.path.dirname(__file__), "icon.png")
+ui_file = os.path.join(os.path.dirname(__file__), "sneakernet-ui.glade")
+
 if len(sys.argv) == 3:
     pc_dir = sys.argv[1]
     remote_dir = sys.argv[2]
@@ -41,9 +44,11 @@ class Handlers:
                 self.show_dialog("error", str(e))
 
 builder = Gtk.Builder()
-builder.add_from_file("sneakernet-ui.glade")
+builder.add_from_file(ui_file)
 
 win = builder.get_object("main")
+win.set_icon_from_file(icon_image)
+
 builder.connect_signals(Handlers())
 win.connect("destroy", Gtk.main_quit)
 win.show_all()

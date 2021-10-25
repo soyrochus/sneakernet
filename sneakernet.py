@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # Simple utility with GUI to copy directory trees, typically between PC and USB
 # Copyright (c) 2021, Iwan van der Kleijn (iwanvanderkleijn@gmail.com)
 # This is Free Software (BSD). See the file LICENSE.txt
